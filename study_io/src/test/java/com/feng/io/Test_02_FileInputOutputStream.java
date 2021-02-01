@@ -29,11 +29,15 @@ import java.io.*;
 public class Test_02_FileInputOutputStream {
 
     /**
-     * 从硬盘存的一个文件中，读取其内容到程序中，使用FileInputStream
+     * 从硬盘存的一个文件中，读取其内容到程序中，使用 FileInputStream
      * 要读取的文件一定要存在，否则抛异常：FileNotFoundException
      *
-     * @throws FileNotFoundException
-     */
+     * @Author fengfanli
+     * @Description //TODO admin
+     * @Date 17:07 2021/1/29
+     * @Param []
+     * @return void
+     **/
     @Test
     public void testFileInputStream1() throws IOException {
         // 1、创建一个 File类的对象。
@@ -136,7 +140,7 @@ public class Test_02_FileInputOutputStream {
     public void testFileOutputStream4() {
         // 1、创建一个File对象，表明要写入的文件位置
         // 输出的物理文件可以不存在，在执行的过程中，若不存在，会自动的创建。若存在，会将原有的文件覆盖
-        File file = new File("hello1.txt");
+        File file = new File("study_io/src/test/hello1.txt");
         // 2、创建一个FileOutputStream 的对象，将file 的对象作为形参传递给FileOutputStream 的构造器中
         FileOutputStream fos = null;
         try {
@@ -165,8 +169,8 @@ public class Test_02_FileInputOutputStream {
     @Test
     public void testFileInputOutputStream5() {
         // 1、提供读入、写出的文件
-        File file1 = new File("C:\\Users\\fw8842\\Desktop\\fengfanli\\PersonalPhoto.jpg");
-        File file2 = new File("C:\\Users\\fw8842\\Desktop\\fengfanli\\PersonalPhoto01.jpg");
+        File file1 = new File("study_io/src/test/liu.jpg");
+        File file2 = new File("study_io/src/test/liu1.jpg");
         // 2、提供相应的流
         FileInputStream fls = null;
         FileOutputStream fos = null;
@@ -207,13 +211,11 @@ public class Test_02_FileInputOutputStream {
     @Test
     public void testCopyFile6() {
         long start = System.currentTimeMillis();
-//        String src = "C:\\Users\\fw8842\\Desktop\\fengfanli\\rlw.mp4";
-//        String dest = "C:\\Users\\fw8842\\Desktop\\fengfanli\\rlw01.mp4";
-        String src = "C:\\Users\\fw8842\\Desktop\\fengfanli\\111.zip";
-        String dest = "C:\\Users\\fw8842\\Desktop\\fengfanli\\333.zip";
+        String src = "study_io/src/test/liu.zip";
+        String dest = "study_io/src/test/liu1.zip";
         copyFile(src, dest);
         long end = System.currentTimeMillis();
-        System.out.println("花费的时间：" + (end - start)); // 2838
+        System.out.println("花费的时间：" + (end - start)); // 14
     }
 
     /**
